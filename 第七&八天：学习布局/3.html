@@ -1,0 +1,163 @@
+<!--两栏布局左侧自适应右侧固定宽度-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1.3</title>
+	<style type="text/css">
+/* 基础设定 */
+		.container {
+			background-color: #BDF;
+			overflow: auto;
+		}
+		.divide {
+			margin: 0;
+			width: 100%;
+			height: 50px;
+			background-color: skyblue;
+			clear: both;
+		}
+		div[id^="right"] {
+			width: 300px;
+		}
+		.container div {
+			box-sizing: border-box;
+			border: 1px solid black;
+		}
+/* 双float */
+		#left1 {
+			float: left;
+			width: calc(100% - 300px);
+		}
+		#right1 {
+			float: left;	
+		}
+/* 双inline-block */
+		#left2 {
+			display: inline-block;
+			vertical-align: top;
+			width: calc(100% - 300px);
+		}
+		#right2 {
+			vertical-align: top;
+			display: inline-block;
+		}
+/* absolute + margin */
+		.position {
+			position: relative;
+		}
+		#left3 {
+			margin-right: 300px;
+			margin-bottom: 300px;
+		}
+		#right3 {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+/* table-cell */
+		#left4 {
+			display: table-cell;
+		}
+		#right4 {
+			display: table-cell;
+			min-width: 300px;
+		}
+/* flex */
+		.flex {
+			display: flex;
+			flex-direction: row;
+		}
+		#left5 {
+			flex: 1 1 auto;
+		}
+		#right5 {
+			flex: 0 0 auto;
+		}
+/* grid */
+		.grid {
+			display: grid;
+			grid-template-columns: auto auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div id="left1">
+		<p>双float<br/>
+		position静态定位position:static(默认)相对定位position:relative配合使用top，bottom，left和right绝对定位position:absolute配合使用top，bottom，left和right
+		注意：绝对定位是相对于设置有display:relative的祖先元素，如果没有，最终会相对于html元素固定定位position:fixed与绝对定位的工作方式完全相同区别是固定定位元素相对于浏览器视口本身堆叠顺序z-index</p>
+	</div><div id="right1">
+		<p>One downside, using certain combinations of margin and padding on the external element can cause scrollbars to appear but this can be solved by placing the margin and padding on another parent containing element.
+
+		Using ‘overflow: hidden’ is also a clearfix solution, but will not have scrollbars, however using hidden will crop any content positioned outside of the containing element.
+
+		Note: The floated element is an img tag in this example, but could be any html element.</p>
+	</div></div>
+	<div class="divide"></div>
+	<div class="container">
+	<div id="left2">
+		<p>双inline-block<br/>
+		position静态定位position:static(默认)相对定位position:relative配合使用top，bottom，left和right绝对定位position:absolute配合使用top，bottom，left和right
+		注意：绝对定位是相对于设置有display:relative的祖先元素，如果没有，最终会相对于html元素固定定位position:fixed与绝对定位的工作方式完全相同区别是固定定位元素相对于浏览器视口本身堆叠顺序z-index</p>
+	</div><div id="right2">
+		<p>One downside, using certain combinations of margin and padding on the external element can cause scrollbars to appear but this can be solved by placing the margin and padding on another parent containing element.
+
+		Using ‘overflow: hidden’ is also a clearfix solution, but will not have scrollbars, however using hidden will crop any content positioned outside of the containing element.
+
+		Note: The floated element is an img tag in this example, but could be any html element.</p>
+	</div></div>
+	<div class="divide"></div>
+	<div class="container position">
+	<div id="left3">
+		<p>absolute + margin<br/>
+		position静态定位position:static(默认)相对定位position:relative配合使用top，bottom，left和right绝对定位position:absolute配合使用top，bottom，left和right
+		注意：绝对定位是相对于设置有display:relative的祖先元素，如果没有，最终会相对于html元素固定定位position:fixed与绝对定位的工作方式完全相同区别是固定定位元素相对于浏览器视口本身堆叠顺序z-index</p>
+	</div><div id="right3">
+		<p>One downside, using certain combinations of margin and padding on the external element can cause scrollbars to appear but this can be solved by placing the margin and padding on another parent containing element.
+
+		Using ‘overflow: hidden’ is also a clearfix solution, but will not have scrollbars, however using hidden will crop any content positioned outside of the containing element.
+
+		Note: The floated element is an img tag in this example, but could be any html element.</p>
+	</div></div>
+	<div class="divide"></div>
+	<div class="container">
+	<div id="left4">
+		<p>双table-cell<br/>
+		position静态定位position:static(默认)相对定位position:relative配合使用top，bottom，left和right绝对定位position:absolute配合使用top，bottom，left和right
+		注意：绝对定位是相对于设置有display:relative的祖先元素，如果没有，最终会相对于html元素固定定位position:fixed与绝对定位的工作方式完全相同区别是固定定位元素相对于浏览器视口本身堆叠顺序z-index</p>
+	</div><div id="right4">
+		<p>One downside, using certain combinations of margin and padding on the external element can cause scrollbars to appear but this can be solved by placing the margin and padding on another parent containing element.
+
+		Using ‘overflow: hidden’ is also a clearfix solution, but will not have scrollbars, however using hidden will crop any content positioned outside of the containing element.
+
+		Note: The floated element is an img tag in this example, but could be any html element.</p>
+	</div></div>
+	<div class="divide"></div>
+	<div class="container flex">
+	<div id="left5">
+		<p>flex<br/>
+		position静态定位position:static(默认)相对定位position:relative配合使用top，bottom，left和right绝对定位position:absolute配合使用top，bottom，left和right
+		注意：绝对定位是相对于设置有display:relative的祖先元素，如果没有，最终会相对于html元素固定定位position:fixed与绝对定位的工作方式完全相同区别是固定定位元素相对于浏览器视口本身堆叠顺序z-index</p>
+	</div><div id="right5">
+		<p>One downside, using certain combinations of margin and padding on the external element can cause scrollbars to appear but this can be solved by placing the margin and padding on another parent containing element.
+
+		Using ‘overflow: hidden’ is also a clearfix solution, but will not have scrollbars, however using hidden will crop any content positioned outside of the containing element.
+
+		Note: The floated element is an img tag in this example, but could be any html element.</p>
+	</div></div>
+	<div class="divide"></div>
+	<div class="container grid">
+	<div id="left6">
+		<p>grid<br/>
+		position静态定位position:static(默认)相对定位position:relative配合使用top，bottom，left和right绝对定位position:absolute配合使用top，bottom，left和right
+		注意：绝对定位是相对于设置有display:relative的祖先元素，如果没有，最终会相对于html元素固定定位position:fixed与绝对定位的工作方式完全相同区别是固定定位元素相对于浏览器视口本身堆叠顺序z-index</p>
+	</div><div id="right6">
+		<p>One downside, using certain combinations of margin and padding on the external element can cause scrollbars to appear but this can be solved by placing the margin and padding on another parent containing element.
+
+		Using ‘overflow: hidden’ is also a clearfix solution, but will not have scrollbars, however using hidden will crop any content positioned outside of the containing element.
+
+		Note: The floated element is an img tag in this example, but could be any html element.</p>
+	</div></div>
+	<div class="divide"></div>
+</body>
+</html>
