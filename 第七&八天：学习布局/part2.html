@@ -1,0 +1,178 @@
+<!--按照设计稿来实现-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>part2</title>
+	<style type="text/css">
+		body {
+			width: 100%;
+			margin: 0;
+			font-size: 14px;
+		}
+		header {
+			width: 100%;
+			height: 60px;
+			/*padding-top: 20px;
+			margin-top: -20px;*/
+			background-color: #444;
+		}
+		header div {
+			position: relative;
+			width: 960px;
+			margin: 0 auto;
+		}
+		header div p {
+			margin: 0;
+			line-height: 60px;
+			font-size: 120%;
+			color: white;
+		}
+		header div nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 80%;
+		}
+		header a {
+			color: white;
+		}
+		div#banner {
+			height: 220px;
+			background-color: #32CD32;
+		}
+		div#banner div {
+			position: relative;
+			height: 220px;
+			margin: 0 auto;
+			width: 960px;
+		}
+		div#banner ul {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+		div#banner li {
+			display: inline-block;
+			width: 25px;
+			line-height: 25px;
+			font-size: .8em;
+			text-align: center;
+			list-style: none;
+			border: 1px solid black;
+			background-color: white;
+			opacity: 0.5;
+		}
+		div#banner li.show {
+			padding-top: 10px;
+			opacity: 1;
+		}
+		nav#menu {
+			/*margin: 0;
+			padding: 0;*/
+			border-bottom: 1px solid lightgray;
+		}
+		nav#menu ul {
+			width: 960px;
+			margin: 0 auto;
+			padding-left: 0;
+		}
+		nav#menu li {
+			display: inline-block;
+			margin-top: 1em;
+			width: 8em;
+			margin-bottom: -1px;
+			line-height: 3em;
+			text-align: center;
+			list-style: none;
+			border: 1px solid lightgray;
+			border-top-left-radius: 1.5em;
+			border-top-right-radius: 1.5em;
+			background-color: #F0F0F0;
+		}
+		nav#menu li.here {
+			background-color: white;
+			border-bottom: white;
+			padding-bottom: 1px;
+		}
+		nav#menu li a {
+			color: black;
+			text-decoration: none;
+		}
+		section article {
+			display: flex;
+			flex-flow: row wrap;
+			width: 960px;
+			margin: 0 auto;
+		}
+		section div {
+			margin-right: 10px;
+			margin-top: 10px;
+			margin-bottom: 0;
+			text-align: center;
+			border: 1px solid lightgray;
+			flex: 1 0 auto;
+		}
+		section p {
+			padding: 80px;
+		}
+		footer {
+			height: 100px;
+			margin-top: 20px;
+			background-color: gray;
+		}
+		footer p {
+			margin: 0 auto;
+			padding: 10px 0;
+			text-align: center;
+		}
+		footer a {
+			text-decoration: none;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div>
+			<p>Logo</p>
+			<nav>
+				<a href="#">Github</a>
+				<a href="#">Register</a>
+				<a href="#">Login</a>
+			</nav>
+		</div>
+	</header>
+	<div id="banner">
+		<div>
+			<ul>
+				<li>1</li>
+				<li class="show">2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+	</div>
+	<nav id="menu">
+		<ul>
+			<li class="here"><a href="#">HERE</a></li><li><a href="#">PROFILE</a></li><li><a href="#">ABOUT</a></li>
+		</ul>
+	</nav>
+	<section id="main">
+		<article>
+			<div><p>This is content 1</p></div>
+			<div><p>Maybecontent 2</p></div>
+			<div><p>content 3</p></div>
+			<div><p>content 4</p></div>
+			<div><p>content 5</p></div>
+			<div><p>content 6</p></div>
+			<div><p>content 7</p></div>
+			<div><p>content 8</p></div>
+			<div><p>content 9</p></div>
+			<div><p>content 10</p></div>
+		</article>
+	</section>
+	<footer>
+		<p><a href="http://ife.baidu.com/">© 2018 ife.baidu.com</a></p>
+	</footer>
+</body>
+</html>
